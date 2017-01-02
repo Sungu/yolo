@@ -42,22 +42,33 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Project YOLO</a>
+        <a class="navbar-brand" href="/">Project YOLO</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <% if request.original_fullpath=='/' %>
-            <li class="active"><a href="/">YOLO 1일차</a></li>
+          <% if user_signed_in? %>
+              <li>
+                <a href="/home/upload">글쓰기</a>
+              </li>
+              <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "정말 로그아웃 하시겠습니까?" }%></li>
+            <% end %>
+          <% if request.original_fullpath=='/home/first_yolo' %>
+            <li class="active"><a href="/home/first_yolo">YOLO 1일차</a></li>
             <li><a href="/home/second_yolo">YOLO 2일차</a></li>
             <li><a href="/home/third_yolo">YOLO 3일차</a></li>
           <% elsif request.original_fullpath=='/home/second_yolo' %>
-            <li><a href="/">YOLO 1일차</a></li>
+            <li><a href="/home/first_yolo">YOLO 1일차</a></li>
             <li class="active"><a href="/home/second_yolo">YOLO 2일차</a></li>
             <li><a href="/home/third_yolo">YOLO 3일차</a></li>
           <% elsif request.original_fullpath=='/home/third_yolo' %> 
-            <li><a href="/">YOLO 1일차</a></li>
+            <li><a href="/home/first_yolo">YOLO 1일차</a></li>
             <li><a href="/home/second_yolo">YOLO 2일차</a></li>
             <li class="active"><a href="/home/third_yolo">YOLO 3일차</a></li>
+          <% else %>
+            <li><a href="/home/first_yolo">YOLO 1일차</a></li>
+            <li><a href="/home/second_yolo">YOLO 2일차</a></li>
+            <li><a href="/home/third_yolo">YOLO 3일차</a></li>
+            <li><a href="/users/sign_in">관리자 로그인</a></li>
           <% end %>
         </ul>
       </div><!--/.nav-collapse -->
