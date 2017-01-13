@@ -4,6 +4,8 @@ class CreatePosts < ActiveRecord::Migration
       t.integer :day
       t.integer :from
       t.integer :target
+      t.text :from_text
+      t.text :target_text
       t.string :from_image
       t.string :target_image
 

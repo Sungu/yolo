@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20170102141435) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "content"
-    t.string   "fort"
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,6 +24,8 @@ ActiveRecord::Schema.define(version: 20170102141435) do
     t.integer  "day"
     t.integer  "from"
     t.integer  "target"
+    t.text     "from_text"
+    t.text     "target_text"
     t.string   "from_image"
     t.string   "target_image"
     t.datetime "created_at",   null: false
