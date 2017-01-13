@@ -2,6 +2,9 @@ class HomeController < ApplicationController
   def index
   end
   
+  def sample
+  end
+  
   def first_yolo
     @post = Post.where(day:1).order(from: :asc)
   end

@@ -53,18 +53,27 @@
               <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: {confirm: "정말 로그아웃 하시겠습니까?" }%></li>
             <% end %>
           <% if request.original_fullpath=='/home/first_yolo' %>
+            <li><a href="/home/sample">예시 페이지</a></li>
             <li class="active"><a href="/home/first_yolo">YOLO 1일차</a></li>
             <li><a href="/home/second_yolo">YOLO 2일차</a></li>
             <li><a href="/home/third_yolo">YOLO 3일차</a></li>
           <% elsif request.original_fullpath=='/home/second_yolo' %>
+            <li><a href="/home/sample">예시 페이지</a></li>
             <li><a href="/home/first_yolo">YOLO 1일차</a></li>
             <li class="active"><a href="/home/second_yolo">YOLO 2일차</a></li>
             <li><a href="/home/third_yolo">YOLO 3일차</a></li>
-          <% elsif request.original_fullpath=='/home/third_yolo' %> 
+          <% elsif request.original_fullpath=='/home/third_yolo' %>
+            <li><a href="/home/sample">예시 페이지</a></li>
             <li><a href="/home/first_yolo">YOLO 1일차</a></li>
             <li><a href="/home/second_yolo">YOLO 2일차</a></li>
             <li class="active"><a href="/home/third_yolo">YOLO 3일차</a></li>
+          <% elsif request.original_fullpath=='/home/sample' %>
+            <li class="active"><a href="/home/sample">예시 페이지</a></li>
+            <li><a href="/home/first_yolo">YOLO 1일차</a></li>
+            <li><a href="/home/second_yolo">YOLO 2일차</a></li>
+            <li><a href="/home/third_yolo">YOLO 3일차</a></li>
           <% else %>
+            <li><a href="/home/sample">예시 페이지</a></li>
             <li><a href="/home/first_yolo">YOLO 1일차</a></li>
             <li><a href="/home/second_yolo">YOLO 2일차</a></li>
             <li><a href="/home/third_yolo">YOLO 3일차</a></li>
